@@ -1,0 +1,27 @@
+{
+  "name": "the-wall-street-journal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akshajnair/the-wall-street-journal-homepage.git"
+  },
+  "author": "Akshaj Nair",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Akshajnair/the-wall-street-journal-homepage/issues"
+  },
+  "homepage": "https://github.com/Akshajnair/the-wall-street-journal-homepage#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
