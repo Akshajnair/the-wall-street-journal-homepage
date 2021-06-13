@@ -1,4 +1,4 @@
-# the Wall street Journal Home page
+# The Wall Street Journal Home page
 
 Use Tensorflow Hand recognition model to make moves and play.
 
