@@ -12,7 +12,9 @@ export default function Column4(props) {
     let cancel = () => {
       return null;
     };
+    // avoiding making request multiple time on every render
     if (loader === true) {
+      //fetching from Gnews API
       axios({
         method: "GET",
         url: "https://gnews.io/api/v4/search?",
@@ -27,11 +29,13 @@ export default function Column4(props) {
           if (axios.isCancel(err)) return;
         });
     }
+    // useEffect cleanup
     return () => {
       cancel();
     };
   });
   function popularopinion() {
+    //showing spinning animation while fetching
     if (loader === true)
       return (
         <div style={{ width: "100%", textAlign: "center" }}>
@@ -77,36 +81,14 @@ export default function Column4(props) {
           aria-label="Most Popular"
           tabIndex="-1"
         >
-          <a
-            className="style--strap--ND8Cuaip style--align-left--3iZ8c-pm "
-            href="/"
-            style={{ pointerEvents: "none" }}
-          >
-            <h2 className="style--label--13MlcFOP typography--sans-serif-narrow--tQEgavy2 style--size-small--1mrJTuBn style--icon-position-right--Sm9pTJ3p style--popular--1tPwo3ys style--opinion--331Kkovj style--padding-top--2IaMnkRi styles--padding-top--2WzISCk5 style--padding-bottom--1wuuBfkb styles--padding-bottom--DQ6elYpe ">
-              <span className="style--label-text--2t4HDvAB ">
-                Most Popular Opinion
-              </span>
-              <span className="style--icon--1WxxxS-r style--icon-position-right--Sm9pTJ3p "></span>
-            </h2>
-          </a>
+          <h2 className="style--label--13MlcFOP typography--sans-serif-narrow--tQEgavy2 style--size-small--1mrJTuBn style--icon-position-right--Sm9pTJ3p style--popular--1tPwo3ys style--opinion--331Kkovj style--padding-top--2IaMnkRi styles--padding-top--2WzISCk5 style--padding-bottom--1wuuBfkb styles--padding-bottom--DQ6elYpe ">
+            <span className="style--label-text--2t4HDvAB ">
+              Most Popular Opinion
+            </span>
+          </h2>
           <ol className="WSJTheme--list-reset--3pR-r52l ">
             {popularopinion()}
           </ol>
-        </div>
-        <div className="" style={{ top: "80px", position: "sticky" }}>
-          <div
-            className="WSJTheme--adWrapper--39BAjA82 "
-            style={{ minHeight: "250px", minWidth: "300px" }}
-            id="wrapper-AD_RAIL3"
-          >
-            <div>
-              <div
-                id="AD_RAIL3"
-                className="WSJTheme--adContainer--pp5ga5XN  "
-                style={{ width: "300px" }}
-              ></div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

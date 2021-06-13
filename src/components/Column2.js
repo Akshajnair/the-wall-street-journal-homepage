@@ -12,7 +12,9 @@ export default function Column2(props) {
     let cancel = () => {
       return null;
     };
+    // avoiding making request multiple time on every render
     if (loader === true) {
+      //fetching from Gnews API
       axios({
         method: "GET",
         url: "https://gnews.io/api/v4/top-headlines?",
@@ -27,10 +29,12 @@ export default function Column2(props) {
           if (axios.isCancel(err)) return;
         });
     }
+    // useEffect cleanup
     return () => {
       cancel();
     };
   });
+  // random image display in randomly selected rows
   function randomimage(element, index) {
     if (index === 0) {
       return <img alt="" src={element.image} width="100%" />;
@@ -40,6 +44,8 @@ export default function Column2(props) {
       return <img alt="" src={element.image} width="100%" />;
     }
   }
+
+  // articles in 2nd column
   function printnews() {
     return news.articles.map((element, index) => {
       let time =
@@ -93,6 +99,7 @@ export default function Column2(props) {
       );
     });
   }
+  //showing spinning animation while fetching
   if (loader === true) {
     return (
       <div className="style--column--1p190TxH style--column-top--3Nm75EtS style--column-5--3ObF0ws7 style--border-left--1FbHaAV_ style--border-right--3pLIaDzb ">

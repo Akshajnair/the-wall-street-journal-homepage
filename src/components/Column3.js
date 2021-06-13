@@ -12,7 +12,9 @@ export default function Column3(props) {
     let cancel = () => {
       return null;
     };
+    // avoiding making request multiple time on every render
     if (loader === true) {
+      //fetching from Gnews API
       axios({
         method: "GET",
         url: "https://gnews.io/api/v4/top-headlines?",
@@ -21,14 +23,15 @@ export default function Column3(props) {
       })
         .then((res) => {
           setNews(res.data);
+          setLoader(false);
         })
         .catch((err) => {
           if (axios.isCancel(err)) return;
         });
     }
+    // useEffect cleanup
     return () => {
       cancel();
-      setLoader(false);
     };
   });
 
@@ -95,6 +98,7 @@ export default function Column3(props) {
       );
     });
   }
+  //showing spinning animation while fetching
   if (loader === true) {
     return (
       <div className="style--column--1p190TxH style--column-top--3Nm75EtS style--column-3--1XQk-WJX ">

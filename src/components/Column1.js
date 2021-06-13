@@ -12,7 +12,9 @@ export default function Column1(props) {
     let cancel = () => {
       return null;
     };
+    // avoiding making request multiple time on every render
     if (loader === true) {
+      //fetching from Gnews API
       axios({
         method: "GET",
         url: "https://gnews.io/api/v4/top-headlines?",
@@ -27,10 +29,12 @@ export default function Column1(props) {
           if (axios.isCancel(err)) return;
         });
     }
+    // useEffect cleanup
     return () => {
       cancel();
     };
   });
+  // 1st element of coloumn 1
   function headline() {
     let time =
       new Date(news.articles[0].publishedAt).getHours() +
@@ -80,7 +84,7 @@ export default function Column1(props) {
       </article>
     );
   }
-
+  //below the 1st elemnet in 1st column
   function subheadline() {
     return news.articles.map((element, index) => {
       let time =
@@ -135,6 +139,7 @@ export default function Column1(props) {
       return null;
     });
   }
+  //showing spinning animation while fetching
   if (loader === true) {
     return (
       <div className="style--column--1p190TxH style--column-top--3Nm75EtS style--column-4--2Ng-GQLy ">
