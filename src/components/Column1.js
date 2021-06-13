@@ -15,7 +15,7 @@ export default function Column1(props) {
     if (loader === true) {
       axios({
         method: "GET",
-        url: "https://newsapi.org/v2/top-headlines",
+        url: "https://gnews.io/api/v4/top-headlines?",
         params: props.config.column1,
         cancelToken: new axios.CancelToken((c) => (cancel = c)),
       })
@@ -45,7 +45,7 @@ export default function Column1(props) {
           <h3 className="WSJTheme--headline--unZqjb45 reset WSJTheme--heading-1--38k38q8O typography--serif-display--ZXeuhS5E ">
             <a className="" href={news.articles[0].url}>
               <span className="WSJTheme--headlineText--He1ANr9C ">
-                {news.articles[0].title}
+                {news.articles[0].title + " | " + news.articles[0].source.name}
               </span>
             </a>
           </h3>
@@ -82,11 +82,11 @@ export default function Column1(props) {
   }
 
   function subheadline() {
-    return news.articles.map((elements, index) => {
+    return news.articles.map((element, index) => {
       let time =
-        new Date(elements.publishedAt).getHours() +
+        new Date(element.publishedAt).getHours() +
         " : " +
-        new Date(elements.publishedAt).getMinutes();
+        new Date(element.publishedAt).getMinutes();
       if (index !== 0)
         return (
           <article
@@ -96,16 +96,16 @@ export default function Column1(props) {
           >
             <div className="WSJTheme--headline--7VCzo7Ay ">
               <h3 className="WSJTheme--headline--unZqjb45 reset WSJTheme--heading-3--2z_phq5h typography--serif-display--ZXeuhS5E ">
-                <a className="" href={elements.url}>
+                <a className="" href={element.url}>
                   <span className="WSJTheme--headlineText--He1ANr9C ">
-                    {elements.title}
+                    {element.title + " | " + element.source.name}
                   </span>
                 </a>
               </h3>
             </div>
             <p className="WSJTheme--summary--lmOXEsbN typography--serif--1CqEfjrc ">
               <span className="WSJTheme--summaryText--2LRaCWgJ ">
-                {elements.description}
+                {element.description}
               </span>
               <span className="WSJTheme--stats--2HBLhVc9 ">
                 <span className="WSJTheme--time-to-read--1uVnDiZs ">

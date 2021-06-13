@@ -15,7 +15,7 @@ export default function Column2(props) {
     if (loader === true) {
       axios({
         method: "GET",
-        url: "https://newsapi.org/v2/top-headlines",
+        url: "https://gnews.io/api/v4/top-headlines?",
         params: props.config.column2,
         cancelToken: new axios.CancelToken((c) => (cancel = c)),
       })
@@ -33,11 +33,11 @@ export default function Column2(props) {
   });
   function randomimage(element, index) {
     if (index === 0) {
-      return <img alt="" src={element.urlToImage} width="100%" />;
+      return <img alt="" src={element.image} width="100%" />;
     }
     let rand = Math.floor(Math.random() * 20);
     if (index === rand || index === rand + 1 || index === rand - 1) {
-      return <img alt="" src={element.urlToImage} width="100%" />;
+      return <img alt="" src={element.image} width="100%" />;
     }
   }
   function printnews() {

@@ -15,7 +15,7 @@ export default function Column4(props) {
     if (loader === true) {
       axios({
         method: "GET",
-        url: "https://newsapi.org/v2/everything?q=opinion",
+        url: "https://gnews.io/api/v4/search?",
         params: props.config.column4,
         cancelToken: new axios.CancelToken((c) => (cancel = c)),
       })
@@ -46,7 +46,7 @@ export default function Column4(props) {
               <div className="WSJTheme--thumb--DOohBjR2 ">
                 <div className="">
                   <img
-                    src={element.urlToImage}
+                    src={element.image}
                     alt=""
                     height="62"
                     width="110"
