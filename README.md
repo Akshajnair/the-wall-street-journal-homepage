@@ -4,21 +4,12 @@ Use Tensorflow Hand recognition model to make moves and play.
 
 ## Getting Started
 
-Live version is available at https://hand-pose.herokuapp.com feel free to test it out and report any issues.
+Live version is available at https://wallstreetjournal.herokuapp.com/ feel free to test it out and report any issues.
 
-## ScreenShots
-
-### Home Page
-
-![Home Page](https://raw.githubusercontent.com/Akshajnair/Handpose/main/screenshots/home.png)
-
-### Camera screen
-
-https://user-images.githubusercontent.com/34983749/119881692-335b3580-bf4b-11eb-8a54-19bffb7ddecb.mp4
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can run:w
 
 ### `cd client`
 
