@@ -1,10 +1,26 @@
-# Getting Started with Create React App
+# Rock Paper Scissor Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Use Tensorflow Hand recognition model to make moves and play.
+
+## Getting Started
+
+Live version is available at https://hand-pose.herokuapp.com feel free to test it out and report any issues.
+
+## ScreenShots
+
+### Home Page
+
+![Home Page](https://raw.githubusercontent.com/Akshajnair/Handpose/main/screenshots/home.png)
+
+### Camera screen
+
+https://user-images.githubusercontent.com/34983749/119881692-335b3580-bf4b-11eb-8a54-19bffb7ddecb.mp4
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `cd client`
 
 ### `npm start`
 
@@ -39,32 +55,14 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
 ### Deployment
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+## Authors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Akshaj Nair** - [akshajnair](https://github.com/Akshajnair)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
