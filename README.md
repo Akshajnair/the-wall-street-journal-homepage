@@ -1,4 +1,4 @@
-# Rock Paper Scissor Game
+# the Wall street Journal Home page
 
 Use Tensorflow Hand recognition model to make moves and play.
 
